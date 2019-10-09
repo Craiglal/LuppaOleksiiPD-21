@@ -4,7 +4,7 @@ namespace Lab_7
 {
     class Program
     {
-        static int NumberOne(int input)
+        static void Reverse(int input)
         {
             string result = "";
             int counter = input.ToString().Length;
@@ -18,10 +18,10 @@ namespace Lab_7
 
             int.TryParse(result, out int output);
 
-            return output;
+            Console.WriteLine(output);
         }
 
-        static string StrOne(string input)
+        static void Reverse(string input)
         {
             string output = "";
             int counter = input.Length;
@@ -31,10 +31,10 @@ namespace Lab_7
                 output += input[i];
             }
 
-            return output;
+            Console.WriteLine(output);
         }
 
-        static double NumberTwo(double input)
+        static void ReverseSplit(double input)
         {
             string result = "";
             string[] temp = input.ToString().Split('.', ',');
@@ -53,10 +53,10 @@ namespace Lab_7
 
             double.TryParse(result, out double output);
 
-            return output;
+            Console.WriteLine(output);
         }
 
-        static string StrTwo(string input)
+        static void ReverseSplit(string input)
         {
             string output = "";
             string[] temp = input.ToString().Split(',');
@@ -65,38 +65,33 @@ namespace Lab_7
                 for (int j = temp[i].Length - 1; j >= 0; j--)
                 {
                     output += temp[i][j];
-                    
+
                 }
                 if (temp.Length != i + 1)
                     output += ',';
             }
 
-            return output;
+            Console.WriteLine(output);
         }
 
         static void Main(string[] args)
         {
-            int numberOne;                                  //Перше завдання,початок 
+            int numberOne;
             bool a;
 
-            do                                             
+            do
             {
                 Console.Write("Enter the number: ");
                 a = int.TryParse(Console.ReadLine(), out numberOne);
                 if (!a)
                     Console.WriteLine("Wrong number!");
             } while (!a);
+            Reverse(numberOne);
 
-            Console.WriteLine(NumberOne(numberOne));         //Перше завдання, кінець   
+            string str = Console.ReadLine();
+            Reverse(str);
 
-
-            string str = Console.ReadLine();              //Друге завдання, початок 
-
-            Console.WriteLine(StrOne(str));                  //Друге завдання, кінець 
-
-
-            double numberTwo;                               //Третє завдання, початок 
-
+            double numberTwo;
             do
             {
                 Console.Write("Enter the number: ");
@@ -104,14 +99,10 @@ namespace Lab_7
                 if (!a)
                     Console.WriteLine("Wrong number!");
             } while (!a);
+            ReverseSplit(numberTwo);
 
-            Console.WriteLine(NumberTwo(numberTwo));        //Третє завдання, кінець 
-
-
-            str = Console.ReadLine();                       //Четверте завдання, початок 
-
-            Console.WriteLine(StrTwo(str));                 //Четверте завдання, кінець 
-
+            str = Console.ReadLine();
+            ReverseSplit(str);
         }
     }
 }
