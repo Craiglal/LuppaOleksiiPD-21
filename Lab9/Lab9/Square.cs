@@ -19,5 +19,12 @@ namespace Lab9_1
             Perimeter = 4 * Length;
             return Perimeter;
         }
+        interface IDraw<Circle>
+        {
+            public void Draw()
+            {
+                Console.WriteLine();
+            }
+        }
     }
 }
