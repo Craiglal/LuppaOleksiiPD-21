@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab9_1
 {
-    class Picture
+    class Picture : IDraw
     {
         List<Shape> shapes;
         int amount { get; set; }
@@ -58,12 +58,11 @@ namespace Lab9_1
         {
             shapes.RemoveAll(x => x.Area > 100);
         }
-
-        interface IDraw<Circle>
+        void IDraw.Draw()
         {
-            public void Draw()
+            for (int i = 0; i < shapes.Count; i++)
             {
-                Console.WriteLine();
+                shapes[i].Draw();
             }
         }
     }

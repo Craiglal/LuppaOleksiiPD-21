@@ -19,12 +19,13 @@ namespace Lab9_1
             Perimeter = 3 * Length;
             return Perimeter;
         }
-    }
-    interface IDraw<Circle>
-    {
-        public void Draw()
+        public override void Draw()
         {
-            Console.WriteLine();
+            Console.BackgroundColor = Color;
+            Console.WriteLine(Name);
+            Console.WriteLine(Length);
+            Console.WriteLine(Area);
+            Console.WriteLine(Perimeter);
         }
     }
 }

@@ -14,17 +14,20 @@ namespace Lab9_1
             Area = Length * Length;
             return Area;
         }
+
+        public override void Draw()
+        {
+            Console.BackgroundColor = Color;
+            Console.WriteLine(Name);
+            Console.WriteLine(Length);
+            Console.WriteLine(Area);
+            Console.WriteLine(Perimeter);
+        }
+
         public override double perimeter()
         {
             Perimeter = 4 * Length;
             return Perimeter;
-        }
-        interface IDraw<Circle>
-        {
-            public void Draw()
-            {
-                Console.WriteLine();
-            }
         }
     }
 }
