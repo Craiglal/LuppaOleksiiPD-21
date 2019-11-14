@@ -30,13 +30,6 @@ namespace Lab9_1
                     return null;
                 }
             }
-            set
-            {
-                if (index >= 0 && index < shapes.Count)
-                    shapes[index] = value;
-                else
-                    Console.WriteLine("Попытка записи за пределами массива.");
-            }
         }
 
         public void AddShape(Shape shape)
@@ -51,7 +44,8 @@ namespace Lab9_1
 
         public void DeleteByType(string type)
         {
-            shapes.Remove(shapes.Find(x => x.GetType().ToString() == type.ToString()));
+            type = "Lab9_1." + type;
+            shapes.Remove(shapes.Find(x => x.GetType().ToString() == type));
         }
 
         public void DeleteByLength(string type)
