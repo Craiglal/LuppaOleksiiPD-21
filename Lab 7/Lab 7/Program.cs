@@ -4,8 +4,8 @@ namespace Lab_7
 {
     class Program
     {
-        static void Reverse(int input)
-        {
+        static void Reverse(int input)
+        {
             string result = "";
             int counter = input.ToString().Length;
 
@@ -14,11 +14,11 @@ namespace Lab_7
                 int temp = input % 10;
                 input = input / 10;
                 result += temp;
-            }
-
-            int.TryParse(result, out int output);
-
-            Console.WriteLine(output);
+            }
+
+            int.TryParse(result, out int output);
+
+            Console.WriteLine(output);
         }
 
         static void Reverse(string input)
